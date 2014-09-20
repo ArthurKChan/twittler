@@ -7,12 +7,16 @@
   </head>
   <body>
     <h1 class="webpageTitle">Twittler</h1>
-    <div class="tweetFeed"></div>
+    <div class="mainContent">
+      <button id="refreshFeed">Refresh Feed</button>
+      <div class="tweetFeed"></div>
+    </div>
     <script>
 
       $(document).ready(function(){
         printStream();
         //setInterval( function(){printStream();}, 30000); // Print all tweets every 30 seconds
+        $('#refreshFeed').click(function(){printStream();})
       });
       
       function printStream(){
