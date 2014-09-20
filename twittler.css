@@ -30,6 +30,12 @@ body {
     font-weight: bold;
 }
 
+.tweetUsername:hover{
+    text-decoration: underline;
+    color: darkslategrey;
+    font-weight:  bolder;
+}
+
 .tweetTimestamp{
     color: lightblue;
     font-size: small;

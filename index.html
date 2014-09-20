@@ -12,26 +12,31 @@
       <div class="tweetFeed"></div>
     </div>
     <script>
+      var currentStream = 'home';
 
       $(document).ready(function(){
-        printStream();
+        printStream(currentStream);
         //setInterval( function(){printStream();}, 30000); // Print all tweets every 30 seconds
-        $('#refreshFeed').click(function(){printStream();})
+        $(document).on('click', '#refreshFeed',function(){currentStream = 'home'; printStream(currentStream);});
+        $(document).on('click', '.tweetUsername', function(){ currentStream = $(this).text().slice(2); printStream(currentStream); });
       });
       
-      function printStream(){
-        var $body = $('.tweetFeed');
-        $body.html('');
-        var index = streams.home.length - 1;  
+      function printStream(user){
+        var $tweetFeed = $('.tweetFeed')
+        $tweetFeed.html('');
+        var index, streamPtr;
+        user === 'home' ?
+        (index = streams.home.length - 1, streamPtr = streams.home ) :
+        (index = (streams.users)[user].length - 1, streamPtr = (streams.users)[user] ); 
         while(index >= 0){
-          var tweet = streams.home[index];
+          var tweet = streamPtr[index];
           var $tweet = $('<div class="tweet"></div>');
           var tweetAge = Math.floor((new Date() - tweet.created_at)/1000 + 1/2);
           //$tweet.text(tweetAge + ' seconds ago @' + tweet.user + ': ' + tweet.message);
-          $tweet.append('<span class="tweetUsername">@ ' + tweet.user + '  </span>');
+          $tweet.append('<span class="tweetUsername">@ ' + tweet.user + '</span>');
           $tweet.append('<span class="tweetTimestamp"> ' + tweetAge + ' seconds ago</span>');
           $tweet.append('<p class="tweetMsg">' + tweet.message + '</p>');
-          $tweet.appendTo($body);
+          $tweet.appendTo($tweetFeed);
           index -= 1;
         }
       }
