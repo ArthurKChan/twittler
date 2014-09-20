@@ -3,28 +3,30 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="twittler.css">
   </head>
   <body>
-    <h1 class="WebpageTitle">Twittler</h1>
-    <div id="tweetFeed"></div>
+    <h1 class="webpageTitle">Twittler</h1>
+    <div class="tweetFeed"></div>
     <script>
 
       $(document).ready(function(){
         printStream();
-        setInterval( function(){printStream();}, 30000); // Print all tweets every 30 seconds
+        //setInterval( function(){printStream();}, 30000); // Print all tweets every 30 seconds
       });
       
       function printStream(){
-        var $body = $('#tweetFeed');
+        var $body = $('.tweetFeed');
         $body.html('');
         var index = streams.home.length - 1;  
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div id="tweet"></div>');
+          var $tweet = $('<div class="tweet"></div>');
           var tweetAge = Math.floor((new Date() - tweet.created_at)/1000 + 1/2);
           //$tweet.text(tweetAge + ' seconds ago @' + tweet.user + ': ' + tweet.message);
-          $tweet.append('<h3>@ ' + tweet.user + '</h3>');
-          $tweet.append('<p id="msg">' + tweet.message + '</p>');
+          $tweet.append('<span class="tweetUsername">@ ' + tweet.user + '  </span>');
+          $tweet.append('<span class="tweetTimestamp"> ' + tweetAge + ' seconds ago</span>');
+          $tweet.append('<p class="tweetMsg">' + tweet.message + '</p>');
           $tweet.appendTo($body);
           index -= 1;
         }

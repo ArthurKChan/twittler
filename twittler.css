@@ -1,0 +1,36 @@
+.webpageTitle {
+  text-align: center;
+}
+
+.tweetFeed {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  border-width: medium;
+  border-color: lightsalmon;
+  border-style: solid;
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top:  15px;
+  padding-bottom:  15px;
+  background-color: white;
+}
+
+.tweetMsg{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tweetUsername{
+    font-weight: bold;
+}
+
+.tweetTimestamp{
+    color: lightblue;
+    font-size: small;
+}
+
+body {
+  background-color: lightcyan;
+}
