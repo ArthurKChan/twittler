@@ -1,33 +1,105 @@
 body {
   background-color: lightcyan;
+  margin: 0px;
+}
+/* Navigation Bar */
+#navBar{
+    background-color: lightgray;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0px;
 }
 
-.webpageTitle {
-  text-align: center;
+#homeButton:hover{
+    border-bottom-style: solid;
+    border-color: darkgrey;
 }
+
+#homeButton:focus{
+    outline: none;
+}
+
+#homeButton{
+    border: hidden;
+    background: lightgray;
+    margin: 0px;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-top: 3px;
+    font-size: 20px;
+    height: 50px;
+}
+
+#logo{
+    width: 25px;
+}
+
+/*Tweet Input*/
+
+#tweetInput{
+    margin-left: 22px;
+    margin-right: 22px;
+    width: 450px;
+    height: 75px;
+    text-align: start;
+}
+
+#post{
+    margin-left: 25px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+#charCount{
+    margin-left: 10px;
+    font-size: small;
+    vertical-align: middle;
+    color: grey;
+}
+
+/*Tweet Stream Section*/
 
 .mainContent {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   width: 500px;
   border-width: medium;
   border-color: lightsalmon;
   border-style: solid;
   border-radius: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
   padding-top:  15px;
   padding-bottom:  15px;
   background-color: white;
 }
 
+.tweet{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tweet:hover{
+    background-color: lightcyan;
+  
+}
+
+.userIcon{
+    height: 30px;
+    padding-right: 10px;
+}
+
 .tweetMsg{
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .tweetUsername{
     font-weight: bold;
+    vertical-align: 8px;
 }
 
 .tweetUsername:hover{
@@ -39,10 +111,12 @@ body {
 .tweetTimestamp{
     color: lightblue;
     font-size: small;
+    margin-left: 8px;
+    vertical-align: 8px;
 }
 
-#refreshFeed{
-    border-style: none;  
+.feedButton{
+    border-style: none;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 5px;
@@ -53,6 +127,29 @@ body {
     border-radius: 4px;
     background-color: lightsalmon;
     color: darkslategray;
-    margin-bottom: 10px;
-    float: right;
 }
+
+.feedButton:hover{
+    background-color: rgb(255, 177, 148);
+  
+}
+
+.feedButton:focus{
+    outline: none;
+  
+}
+
+#refreshFeed{
+    float: right;
+    margin-right: 15px;
+}
+
+#showMore{
+    font-size: 20px;
+    width: 470px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+/**/
