@@ -2,6 +2,11 @@ body {
   background-color: lightcyan;
   margin: 0px;
 }
+
+textarea{
+  resize: none;
+}
+
 /* Navigation Bar */
 #navBar{
     background-color: lightgray;
